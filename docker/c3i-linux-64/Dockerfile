@@ -1,4 +1,4 @@
-FROM centos:6.9
+FROM centos:7
 MAINTAINER Michael Sarahan <msarahan@continuum.io>
 
 # Set the locale
