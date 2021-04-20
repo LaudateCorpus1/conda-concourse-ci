@@ -6,12 +6,6 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN mkdir -p bin && \
-  LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/concourse/concourse/releases/latest) && \
-  LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/') && \
-  ARTIFACT_URL="https://github.com/concourse/concourse/releases/download/$LATEST_VERSION/fly_linux_amd64" && \
-  curl -L ${ARTIFACT_URL} -o bin/fly && chmod +x bin/fly
-
 RUN yum install -y \
   gettext gettext.i686 \
   libX11 libX11.i686 \
